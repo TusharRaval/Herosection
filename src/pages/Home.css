@@ -1,0 +1,413 @@
+/* Full-Screen Hero Section */
+.ma {
+  padding: 80px;
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw; /* Ensure full width */
+}
+
+.home-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 80px 50px;
+  overflow: hidden; /* Ensures abstract shapes don’t overflow */
+  overflow-x: hidden;
+}
+
+/* Ensure the row takes full height and both sections align properly */
+.home-container .row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of content on smaller screens */
+  height: 100%;
+  flex-direction: row; /* By default, align sections horizontally */
+}
+
+/* Make both sections take up equal height */
+.text-section, .video-section {
+  height: 75%; /* Full height of the row */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Left Text Section */
+.text-section {
+  text-align: left;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.text-section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.text-section p {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  color: #F0E6FF;
+}
+
+/* Button */
+.btn-primary {
+  background: #FF5722;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+.btn-primary:hover {
+  background: #E64A19;
+  transform: scale(1.05);
+}
+
+/* Right Video Section */
+.video-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  z-index: 2;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire section without distortion */
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Abstract Shapes */
+.abstract-shape {
+  position: absolute;
+  opacity: 10;
+  animation: floatAnimation 6s infinite ease-in-out alternate;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(80px);
+  }
+}
+
+/* Floating Circles */
+.circle1 {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  top: 30%;
+  left: 40%;
+  animation-delay: 3s;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  bottom: 20%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+/* Responsive Adjustments for Tablets and Mobile */
+@media (max-width: 992px) {
+  /* Stack content vertically on tablets and smaller */
+  .home-container .row {
+    flex-direction: column; /* Stack the columns vertically */
+    height: auto; /* Allow the content to take up natural height */
+  }
+
+  .text-section {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .text-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .text-section p {
+    font-size: 1.1rem;
+  }
+
+  /* Button */
+  .btn-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* Video Section */
+  .video-section {
+    height: 50vh; /* Adjust the height of the video for tablet view */
+    margin-top: 30px;
+  }
+
+  .background-video {
+    object-fit: cover; /* Ensure the video covers the section without distortion */
+    height: 100%; /* Let it fill the container */
+    width: 100%; /* Make it responsive */
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+  .text-section {
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .text-section p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Video Section */
+  .video-section {
+    height: 40vh; /* Adjust the video height for mobile */
+    margin-top: 20px;
+  }
+
+  .background-video {
+    object-fit: cover; /* Ensure the video covers the section */
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Abstract Shapes Container */
+.abstract-shapes-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Make sure shapes are behind the text/video */
+  pointer-events: none; /* Prevent shapes from interfering with interactions */
+}
+
+/* General Styling for Abstract Shapes */
+.abstract-shape {
+  position: absolute;
+  opacity: 0.9;
+  animation: floatAnimation 6s infinite ease-in-out alternate;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* Blob Shapes */
+.blob1 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.6), rgba(255, 87, 34, 0.3));
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.blob2 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(0, 230, 255, 0.6), rgba(0, 230, 255, 0.3));
+  border-radius: 50%;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+/* Floating Circles */
+.circle1 {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  top: 25%;
+  left: 40%;
+  animation-delay: 3s;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  bottom: 20%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+/* Wavy Shape */
+.wave1 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  clip-path: polygon(0% 50%, 25% 40%, 50% 60%, 75% 50%, 100% 70%, 75% 100%, 50% 80%, 25% 100%, 0% 70%);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: waveAnimation 5s infinite ease-in-out alternate;
+}
+
+/* Wavy Animation */
+@keyframes waveAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+/* Dotted Effect */
+.dots {
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(white 3px, transparent 3px);
+  background-size: 15px 15px;
+  opacity: 0.2;
+  top: 40%;
+  left: 10%;
+  animation: moveDots 7s infinite linear;
+}
+
+@keyframes moveDots {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+
+/* Responsive Adjustments */
+
+/* Tablet and Mobile Adjustments */
+@media (max-width: 992px) {
+  .blob1 {
+    width: 180px;
+    height: 180px;
+    top: 5%;
+    left: 5%;
+  }
+
+  .blob2 {
+    width: 160px;
+    height: 160px;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .circle1 {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    left: 30%;
+  }
+
+  .circle2 {
+    width: 80px;
+    height: 80px;
+    bottom: 10%;
+    right: 20%;
+  }
+
+  .wave1 {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 50%;
+  }
+
+  .dots {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .blob1 {
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    left: 5%;
+  }
+
+  .blob2 {
+    width: 140px;
+    height: 140px;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .circle1 {
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    left: 20%;
+  }
+
+  .circle2 {
+    width: 60px;
+    height: 60px;
+    bottom: 5%;
+    right: 15%;
+  }
+
+  .wave1 {
+    width: 100px;
+    height: 100px;
+    top: 35%;
+    left: 50%;
+  }
+
+  .dots {
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 5%;
+  }
+}
+

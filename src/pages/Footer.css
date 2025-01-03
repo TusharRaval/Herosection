@@ -1,0 +1,103 @@
+/* General Footer Styling */
+.footer {
+  background: linear-gradient(135deg, #FF5722, #FFC107); /* Complementary warm colors (orange/yellow) */
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%; /* Make the footer span 100% of the width */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column; /* Vertically stacked sections */
+    align-items: center; /* Center the sections horizontally */
+    max-width: 100%; /* Allow the container to take up full width */
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding for responsiveness */
+    background: linear-gradient(135deg, #FF5722, #FFC107); /* Complementary warm colors (orange/yellow) */
+    color: #FFFFFF;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-section {
+    width: 100%; /* Ensure the section takes up full width */
+    margin-bottom: 30px; /* Space between sections */
+  }
+  
+  .footer-section h2,
+  .footer-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: #ecf0f1;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+    color: #3498db;
+  }
+  
+  .footer-section input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .footer-section button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .footer-container {
+      flex-direction: row; /* Arrange the sections in a row for larger screens */
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    .footer-section {
+      width: 23%; /* Each section takes up 1/4 of the space */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .footer-section input {
+      width: 100%; /* Make the input take up full width on mobile */
+    }
+  }
+  

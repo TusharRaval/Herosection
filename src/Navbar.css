@@ -1,0 +1,229 @@
+/* Navbar Styling */
+.navbar {
+  background: rgba(20, 20, 50, 0.8); /* Dark blue transparent background */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  padding: 15px 20px;
+  transition: all 0.3s ease-in-out;
+  overflow-x:hidden;
+  
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none; /* Remove default border */
+  background: none; /* Remove default background */
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #FFFFFF; /* White color for visibility on dark background */
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-toggler:hover .navbar-toggler-icon {
+  background-color: #FF5722; /* Change to vibrant orange when hovered */
+}
+
+/* Active or Toggled State */
+.navbar-toggler:focus {
+  outline: none; /* Remove the focus outline */
+}
+
+.navbar-toggler:active .navbar-toggler-icon {
+  background-color: #FF5722; /* Vibrant orange when the button is active */
+}
+
+/* Responsive: Adjust Toggler for Mobile and Tablet */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for a sleek look */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for better visibility */
+  }
+  
+  /* Change color of icon when in mobile/tablet view */
+  .navbar-toggler-icon {
+    background-color: #FFFFFF; /* White to make it visible against dark background */
+  }
+
+  .navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #FF5722; /* Vibrant orange on hover */
+  }
+}
+
+
+
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #F0E6FF; /* Soft lavender */
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FF5722; /* Vibrant orange on hover */
+}
+
+
+/* Active Link */
+
+/*.navbar-nav .nav-link.active {
+  color: #FFAB40; /* Soft orange 
+  font-weight: bold;
+}*/
+
+/* Navbar Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #FF5722, #FF8C00); /* Orange gradient */
+  border: none;
+  padding: 10px 20px;
+  font-size: 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-decoration: none !important; /* Ensure no underline */
+ /* display: inline-block; /* Make sure it behaves like a button */
+  color:#ffffff;
+  
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #E64A19, #FF7043);
+  transform: scale(1.05);
+}
+
+.btn-outline-primary {
+  border: 2px solid #FF5722;
+  color: #FF5722;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+  background: #FF5722;
+  color: #fff;
+}
+
+/* Sidebar Styles */
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden */
+  width: 280px;
+  height: 100%;
+  background: rgba(8, 8, 35, 0.9); /* Darker shade of blue/purple for better visibility */
+  backdrop-filter: blur(15px); /* Glassmorphism effect */
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for a more distinct look */
+  z-index: 9999; /* Ensures sidebar is above other content */
+}
+
+/* When the sidebar is open */
+.sidebar.open {
+  right: 0;
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #FFFFFF; /* White color for visibility on dark background */
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Button/Toggle: Adjust for visibility on mobile */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for a sleek look */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for better visibility */
+    z-index: 10000; /* Ensure toggle button is on top */
+  }
+  
+  /* When clicked, ensure the sidebar appears */
+  .navbar-toggler.collapsed + .sidebar {
+    right: 0; /* Make sidebar visible when toggler is clicked */
+  }
+
+  /* Hide navbar links and buttons for mobile */
+  .navbar-nav {
+    display: none; /* Hide navbar links on small screens */
+  }
+
+  .btn-primary, .btn-outline-primary {
+    display: none; /* Hide buttons on navbar in small screens */
+  }
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  color: #FF5722; /* Vibrant orange to match the theme */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Sidebar Links */
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.sidebar-links li {
+  margin: 20px 0;
+}
+
+.sidebar-links a {
+  color: #F0E6FF; /* Soft lavender to match the navbar */
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar-links a:hover {
+  color: #FF5722; /* Vibrant orange on hover */
+  text-decoration: underline; /* Adds underline on hover for better interaction visibility */
+}
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar-nav {
+      display: none; /* Hide navbar links on small screens */
+  }
+
+  .btn-primary, .btn-outline-primary {
+      display: none; /* Hide buttons on navbar in small screens */
+  }
+}
